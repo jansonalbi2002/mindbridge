@@ -29,7 +29,7 @@ interface UIState {
 }
 
 export const useUIStore = create<UIState>((set) => ({
-  theme: 'light',
+  theme: 'dark',
   setTheme: (mode) => {
     document.documentElement.classList.toggle('dark', mode === 'dark');
     set({ theme: mode });

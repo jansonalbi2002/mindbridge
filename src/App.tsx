@@ -18,7 +18,7 @@ function App() {
     const stored = localStorage.getItem('mindbridge-theme') as 'light' | 'dark' | null;
     if (stored === 'light' || stored === 'dark') {
       setTheme(stored);
-    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    } else {
       setTheme('dark');
     }
   }, [setTheme]);
