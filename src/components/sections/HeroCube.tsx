@@ -4,7 +4,6 @@ import './HeroCube.css';
 // Colors: red front, orange back, green right, blue left, white top, yellow bottom
 const STICKER_ROWS = 3;
 
-type FaceColors = string[][];
 
 const SOLVED_FACE_COLORS: Record<string, string> = {
   front: '#EF4444',
