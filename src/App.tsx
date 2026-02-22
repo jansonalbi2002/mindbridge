@@ -15,7 +15,7 @@ function App() {
   const setTheme = useUIStore((s) => s.setTheme);
 
   useEffect(() => {
-    const stored = localStorage.getItem('mindbridge-theme') as 'light' | 'dark' | null;
+    const stored = localStorage.getItem('mindbridge-theme-v2') as 'light' | 'dark' | null;
     if (stored === 'light' || stored === 'dark') {
       setTheme(stored);
     } else {
@@ -25,7 +25,7 @@ function App() {
 
   useEffect(() => {
     const unsub = useUIStore.subscribe((state) => {
-      localStorage.setItem('mindbridge-theme', state.theme);
+      localStorage.setItem('mindbridge-theme-v2', state.theme);
     });
     return unsub;
   }, []);
