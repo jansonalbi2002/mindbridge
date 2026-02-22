@@ -1,0 +1,53 @@
+/* ── Camera / scene ─────────────────────────────────────────────────────── */
+.hero-cube__scene {
+  width: 100px;
+  height: 100px;
+  perspective: 320px;
+  perspective-origin: 55% 45%;
+}
+
+/* ── Cube wrapper – rotates continuously ────────────────────────────────── */
+.hero-cube {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  transform-style: preserve-3d;
+  animation: heroCubeSpin 9s linear infinite;
+}
+
+@keyframes heroCubeSpin {
+  0%   { transform: rotateX(-22deg) rotateY(0deg); }
+  100% { transform: rotateX(-22deg) rotateY(360deg); }
+}
+
+/* ── Each face ──────────────────────────────────────────────────────────── */
+.hero-cube__face {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 3px;
+  padding: 3px;
+  box-sizing: border-box;
+  background: #111;
+  border: 2px solid #222;
+  border-radius: 4px;
+  backface-visibility: visible;
+}
+
+.hero-cube__face--front  { transform: rotateY(  0deg) translateZ(50px); }
+.hero-cube__face--back   { transform: rotateY(180deg) translateZ(50px); }
+.hero-cube__face--right  { transform: rotateY( 90deg) translateZ(50px); }
+.hero-cube__face--left   { transform: rotateY(-90deg) translateZ(50px); }
+.hero-cube__face--top    { transform: rotateX( 90deg) translateZ(50px); }
+.hero-cube__face--bottom { transform: rotateX(-90deg) translateZ(50px); }
+
+/* ── Stickers ───────────────────────────────────────────────────────────── */
+.hero-cube__sticker {
+  border-radius: 2px;
+  width: 100%;
+  height: 100%;
+  box-shadow: inset 0 0 0 1px rgba(0,0,0,0.25);
+}

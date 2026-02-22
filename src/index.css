@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+@theme {
+  /* MindBridge design tokens */
+  --color-primary: #1E3A8A;
+  --color-secondary: #0F766E;
+  --color-accent: #38BDF8;
+  --color-background: #F8FAFC;
+  --color-text: #0F172A;
+  --font-heading: Poppins, Sora, ui-sans-serif, system-ui, sans-serif;
+  --font-body: Inter, ui-sans-serif, system-ui, sans-serif;
+  --shadow-soft: 0 18px 45px rgba(15, 23, 42, 0.15);
+  --shadow-glass: 0 24px 60px rgba(15, 23, 42, 0.25);
+}
+
+:root {
+  color-scheme: light dark;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.dark body {
+  background-color: var(--color-slate-950);
+  color: var(--color-slate-100);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-slate-400);
+  border-radius: 9999px;
+}
+
+html {
+  scroll-snap-type: y proximity;
+}
+
+body.cursor-none {
+  cursor: none;
+}
+
+.glass-card {
+  background-color: rgb(255 255 255 / 0.6);
+  backdrop-filter: blur(24px);
+  box-shadow: var(--shadow-glass);
+  border: 1px solid rgb(255 255 255 / 0.4);
+}
+.dark .glass-card {
+  background-color: rgb(15 23 42 / 0.5);
+  border-color: rgb(30 41 59 / 0.6);
+}
